@@ -1,8 +1,10 @@
- Bacteria miki;
+ Bacteria [] miki;
  void setup()   
  {     
    size(300, 300);   
-   miki = new Bacteria(150, 150);
+   miki = new Bacteria[100];
+   for (int i = 0; i < miki.length; i ++)
+     miki[i] = new Bacteria();
  }   
  
  
@@ -11,25 +13,25 @@
    //move and show the bacteria 
    
    background(0);
-   miki.show();
-   miki.move();
-   
+   for (int i = 0; i < miki.length; i ++) {
+     miki[i].show();
+     miki[i].move();
+   }
  }  
  class Bacteria    
  {     
    //lots of java!   
    int myX, myY;
-   Bacteria(int x, int y) {
-     myX = x;
-     myY = y;
+   Bacteria() { //constructor
+     myX = myY = 150;
    }
    
    void show() {
-     ellipse(myX, myY, 50, 50);
+     ellipse(myX, myY, 30, 30);
    }
    void move() {
-     myX = (int)(Math.random() * 7) - 3 + myX; 
-     myY = (int)(Math.random() * 7) - 3 + myY;
-     //3, 2, 1, 0, -1, -2, -3
+     myX = (int)(Math.random() * 5) - 2 + myX; 
+     myY = (int)(Math.random() * 5) - 2 + myY;
+     //2, 1, 0, -1, -2
    }
- }    
+ }   
