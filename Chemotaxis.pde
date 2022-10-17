@@ -27,17 +27,15 @@
    
    void show() {
      fill(100, 160, 140);
-     ellipse(myX, myY, 25, 30);
-     //ribbon
+     //ellipse(myX, myY, 25, 30);
+     //
      fill(98, 60, 180);
-     triangle(myX - 10, myY - 15, myX - 18, myY - 20, myX - 18, myY - 10);
-     triangle(myX - 10, myY - 15, myX - 2, myY - 20, myX - 2, myY - 10);
-     fill(203, 200, 140);
-     ellipse(myX - 10, myY - 15, 7, 7);
+     curve(myX, myY, myX + 20, myY + 20, myX + 30, myY + 20, myX + 50, myY);
+     curve(myX, myY, myX + 20, myY - 20, myX + 30, myY - 20, myX + 50, myY);
      
    }
    void move() {
-     myX = (int)(Math.random() * 5) - 2 + myX; 
+     myX = (int)(Math.random() * 6) - 2 + myX; 
      myY = (int)(Math.random() * 5) - 2 + myY;
      //2, 1, 0, -1, -2
    }
